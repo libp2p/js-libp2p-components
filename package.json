@@ -1,6 +1,6 @@
 {
   "name": "@libp2p/components",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "Container for libp2p components",
   "license": "Apache-2.0 OR MIT",
   "homepage": "https://github.com/libp2p/js-libp2p-components#readme",
