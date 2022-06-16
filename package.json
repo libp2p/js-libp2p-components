@@ -129,7 +129,7 @@
   },
   "dependencies": {
     "@libp2p/interface-address-manager": "^1.0.1",
-    "@libp2p/interface-connection": "^1.0.0",
+    "@libp2p/interface-connection": "^2.0.0",
     "@libp2p/interface-connection-manager": "^1.0.0",
     "@libp2p/interface-content-routing": "^1.0.0",
     "@libp2p/interface-dht": "^1.0.0",
@@ -138,7 +138,7 @@
     "@libp2p/interface-peer-routing": "^1.0.0",
     "@libp2p/interface-peer-store": "^1.0.0",
     "@libp2p/interface-pubsub": "^1.0.0",
-    "@libp2p/interface-registrar": "^1.0.0",
+    "@libp2p/interface-registrar": "^2.0.0",
     "@libp2p/interface-transport": "^1.0.0",
     "@libp2p/interfaces": "^3.0.2",
     "err-code": "^3.0.1",
