@@ -1,3 +1,14 @@
+## [2.0.0](https://github.com/libp2p/js-libp2p-components/compare/v1.0.0...v2.0.0) (2022-06-16)
+
+
+### ⚠ BREAKING CHANGES
+
+* the connection and registrar APIs are updated
+
+### Trivial Changes
+
+* update deps ([#4](https://github.com/libp2p/js-libp2p-components/issues/4)) ([3d28639](https://github.com/libp2p/js-libp2p-components/commit/3d28639429bcb208fcebbfcd916c5384280fdc7a))
+
 ## 1.0.0 (2022-06-14)
 
 
