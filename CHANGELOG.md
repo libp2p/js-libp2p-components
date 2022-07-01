@@ -1,3 +1,10 @@
+## [2.0.1](https://github.com/libp2p/js-libp2p-components/compare/v2.0.0...v2.0.1) (2022-07-01)
+
+
+### Trivial Changes
+
+* update @libp2p/interface-metrics ([#7](https://github.com/libp2p/js-libp2p-components/issues/7)) ([eb751d1](https://github.com/libp2p/js-libp2p-components/commit/eb751d1c4f06d0a1ebf1ce237a62c522979e58b6))
+
 ## [2.0.0](https://github.com/libp2p/js-libp2p-components/compare/v1.0.0...v2.0.0) (2022-06-16)
 
 
