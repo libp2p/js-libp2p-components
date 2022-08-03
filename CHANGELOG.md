@@ -1,3 +1,16 @@
+## [2.0.2](https://github.com/libp2p/js-libp2p-components/compare/v2.0.1...v2.0.2) (2022-08-03)
+
+
+### Bug Fixes
+
+* update doc ([794ac21](https://github.com/libp2p/js-libp2p-components/commit/794ac21625e62a632849787fcabe94a2ed09efc6))
+
+
+### Trivial Changes
+
+* **deps:** bump @libp2p/interface-pubsub from 1.0.4 to 2.0.0 ([#8](https://github.com/libp2p/js-libp2p-components/issues/8)) ([617b737](https://github.com/libp2p/js-libp2p-components/commit/617b73768e16a1d67032645b3dac7c06afb2ce7b))
+* update project config ([#9](https://github.com/libp2p/js-libp2p-components/issues/9)) ([f844d3b](https://github.com/libp2p/js-libp2p-components/commit/f844d3b66d90cb9213036418310fd0b199ee5602))
+
 ## [2.0.1](https://github.com/libp2p/js-libp2p-components/compare/v2.0.0...v2.0.1) (2022-07-01)
 
 
