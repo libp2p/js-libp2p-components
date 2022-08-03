@@ -31,7 +31,6 @@ const components = new Components({
 })
 
 // later
-
 components.getPeerId()
 ```
 
