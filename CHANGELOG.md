@@ -1,3 +1,15 @@
+## [2.0.3](https://github.com/libp2p/js-libp2p-components/compare/v2.0.2...v2.0.3) (2022-08-10)
+
+
+### Bug Fixes
+
+* update deps ([#12](https://github.com/libp2p/js-libp2p-components/issues/12)) ([210dab0](https://github.com/libp2p/js-libp2p-components/commit/210dab06f5d54a3e72ffaeb3cbfbf7cabe14346a))
+
+
+### Dependencies
+
+* bump @libp2p/interface-metrics from 2.0.0 to 3.0.0 ([#11](https://github.com/libp2p/js-libp2p-components/issues/11)) ([7b56244](https://github.com/libp2p/js-libp2p-components/commit/7b562449dd34991f9351b15852e89cdd2bb76e59))
+
 ## [2.0.2](https://github.com/libp2p/js-libp2p-components/compare/v2.0.1...v2.0.2) (2022-08-03)
 
 
