@@ -1,3 +1,10 @@
+## [2.0.4](https://github.com/libp2p/js-libp2p-components/compare/v2.0.3...v2.0.4) (2022-08-12)
+
+
+### Dependencies
+
+* bump interface-datastore from 6.1.1 to 7.0.0 ([#13](https://github.com/libp2p/js-libp2p-components/issues/13)) ([2be24d2](https://github.com/libp2p/js-libp2p-components/commit/2be24d2189831ae933c9c148e32dca2053eca65f))
+
 ## [2.0.3](https://github.com/libp2p/js-libp2p-components/compare/v2.0.2...v2.0.3) (2022-08-10)
 
 
