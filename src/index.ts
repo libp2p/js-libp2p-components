@@ -12,7 +12,7 @@ import type { TransportManager, Upgrader } from '@libp2p/interface-transport'
 import type { Datastore } from 'interface-datastore'
 import type { PubSub } from '@libp2p/interface-pubsub'
 import type { DualDHT } from '@libp2p/interface-dht'
-import type { ConnectionManager } from '@libp2p/interface-connection-manager'
+import type { ConnectionManager, Dialer } from '@libp2p/interface-connection-manager'
 
 export interface Initializable {
   init: (components: Components) => void
@@ -38,6 +38,7 @@ export interface ComponentsInit {
   connectionProtector?: ConnectionProtector
   dht?: DualDHT
   pubsub?: PubSub
+  dialer?: Dialer
 }
 
 export class Components implements Startable {
@@ -56,6 +57,7 @@ export class Components implements Startable {
   private connectionProtector?: ConnectionProtector
   private dht?: DualDHT
   private pubsub?: PubSub
+  private dialer?: Dialer
   private started = false
 
   constructor (init: ComponentsInit = {}) {
@@ -440,5 +442,23 @@ export class Components implements Startable {
     }
 
     return this.pubsub
+  }
+
+  setDialer (dialer: Dialer) {
+    this.dialer = dialer
+
+    if (isInitializable(dialer)) {
+      dialer.init(this)
+    }
+
+    return dialer
+  }
+
+  getDialer (): Dialer {
+    if (this.dialer == null) {
+      throw errCode(new Error('dialer not set'), 'ERR_SERVICE_MISSING')
+    }
+
+    return this.dialer
   }
 }
