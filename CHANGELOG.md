@@ -1,3 +1,10 @@
+## [2.1.0](https://github.com/libp2p/js-libp2p-components/compare/v2.0.4...v2.1.0) (2022-09-09)
+
+
+### Features
+
+* add dialer component ([#16](https://github.com/libp2p/js-libp2p-components/issues/16)) ([5ecb6b0](https://github.com/libp2p/js-libp2p-components/commit/5ecb6b0a9973d6b9369aef017b8fd28a68cfe02f))
+
 ## [2.0.4](https://github.com/libp2p/js-libp2p-components/compare/v2.0.3...v2.0.4) (2022-08-12)
 
 
