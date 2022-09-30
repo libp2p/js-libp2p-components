@@ -120,6 +120,10 @@ export class Components implements Startable {
     if (init.pubsub != null) {
       this.setPubSub(init.pubsub)
     }
+
+    if (init.dialer != null) {
+      this.setDialer(init.dialer)
+    }
   }
 
   isStarted () {
