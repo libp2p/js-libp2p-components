@@ -1,3 +1,15 @@
+## [2.1.1](https://github.com/libp2p/js-libp2p-components/compare/v2.1.0...v2.1.1) (2022-09-30)
+
+
+### Bug Fixes
+
+* set dialer in constructor if passed ([#17](https://github.com/libp2p/js-libp2p-components/issues/17)) ([d9ca145](https://github.com/libp2p/js-libp2p-components/commit/d9ca145ed5bd8837cb106253c3819aec4077591a))
+
+
+### Trivial Changes
+
+* Update .github/workflows/stale.yml [skip ci] ([c9f66bf](https://github.com/libp2p/js-libp2p-components/commit/c9f66bf8b7808697e9befdaacc8fe2b589f82c91))
+
 ## [2.1.0](https://github.com/libp2p/js-libp2p-components/compare/v2.0.4...v2.1.0) (2022-09-09)
 
 
