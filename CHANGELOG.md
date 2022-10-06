@@ -1,3 +1,14 @@
+## [3.0.0](https://github.com/libp2p/js-libp2p-components/compare/v2.1.1...v3.0.0) (2022-10-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* upgrade interface-transport to ^2.0.0 (#19)
+
+### Dependencies
+
+* upgrade interface-transport to ^2.0.0 ([#19](https://github.com/libp2p/js-libp2p-components/issues/19)) ([550624a](https://github.com/libp2p/js-libp2p-components/commit/550624aaa3186fafabe026ff7751c4f1ef0942c4))
+
 ## [2.1.1](https://github.com/libp2p/js-libp2p-components/compare/v2.1.0...v2.1.1) (2022-09-30)
 
 
