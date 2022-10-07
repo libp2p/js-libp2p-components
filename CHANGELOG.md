@@ -1,3 +1,10 @@
+## [3.0.1](https://github.com/libp2p/js-libp2p-components/compare/v3.0.0...v3.0.1) (2022-10-07)
+
+
+### Dependencies
+
+* update address manager interface ([#20](https://github.com/libp2p/js-libp2p-components/issues/20)) ([4f0ed1f](https://github.com/libp2p/js-libp2p-components/commit/4f0ed1ff86f4ca27b61363bbaf471e496a4b736c))
+
 ## [3.0.0](https://github.com/libp2p/js-libp2p-components/compare/v2.1.1...v3.0.0) (2022-10-06)
 
 
