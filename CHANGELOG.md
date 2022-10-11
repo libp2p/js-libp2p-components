@@ -1,3 +1,10 @@
+## [3.1.0](https://github.com/libp2p/js-libp2p-components/compare/v3.0.1...v3.1.0) (2022-10-11)
+
+
+### Features
+
+* add simple getters for all components ([#21](https://github.com/libp2p/js-libp2p-components/issues/21)) ([a970f68](https://github.com/libp2p/js-libp2p-components/commit/a970f6814007f18e95049e9580c1d09e7244f935))
+
 ## [3.0.1](https://github.com/libp2p/js-libp2p-components/compare/v3.0.0...v3.0.1) (2022-10-07)
 
 
