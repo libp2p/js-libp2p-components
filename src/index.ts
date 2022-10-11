@@ -42,23 +42,23 @@ export interface ComponentsInit {
 }
 
 export class Components implements Startable {
-  private peerId?: PeerId
-  private addressManager?: AddressManager
-  private peerStore?: PeerStore
-  private upgrader?: Upgrader
-  private metrics?: Metrics
-  private registrar?: Registrar
-  private connectionManager?: ConnectionManager
-  private transportManager?: TransportManager
-  private connectionGater?: ConnectionGater
-  private contentRouting?: ContentRouting
-  private peerRouting?: PeerRouting
-  private datastore?: Datastore
-  private connectionProtector?: ConnectionProtector
-  private dht?: DualDHT
-  private pubsub?: PubSub
-  private dialer?: Dialer
-  private started = false
+  private _peerId?: PeerId
+  private _addressManager?: AddressManager
+  private _peerStore?: PeerStore
+  private _upgrader?: Upgrader
+  private _metrics?: Metrics
+  private _registrar?: Registrar
+  private _connectionManager?: ConnectionManager
+  private _transportManager?: TransportManager
+  private _connectionGater?: ConnectionGater
+  private _contentRouting?: ContentRouting
+  private _peerRouting?: PeerRouting
+  private _datastore?: Datastore
+  private _connectionProtector?: ConnectionProtector
+  private _dht?: DualDHT
+  private _pubSub?: PubSub
+  private _dialer?: Dialer
+  private _started = false
 
   constructor (init: ComponentsInit = {}) {
     if (init.peerId != null) {
@@ -127,7 +127,7 @@ export class Components implements Startable {
   }
 
   isStarted () {
-    return this.started
+    return this._started
   }
 
   async beforeStart () {
@@ -147,7 +147,7 @@ export class Components implements Startable {
       })
     )
 
-    this.started = true
+    this._started = true
   }
 
   async afterStart () {
@@ -177,7 +177,7 @@ export class Components implements Startable {
       })
     )
 
-    this.started = false
+    this._started = false
   }
 
   async afterStop () {
@@ -190,22 +190,138 @@ export class Components implements Startable {
     )
   }
 
+  get peerId (): PeerId {
+    if (this._peerId == null) {
+      throw errCode(new Error('peerId not set'), 'ERR_SERVICE_MISSING')
+    }
+
+    return this._peerId
+  }
+
+  get metrics (): Metrics | undefined {
+    return this._metrics
+  }
+
+  get addressManager (): AddressManager {
+    if (this._addressManager == null) {
+      throw errCode(new Error('addressManager not set'), 'ERR_SERVICE_MISSING')
+    }
+
+    return this._addressManager
+  }
+
+  get peerStore (): PeerStore {
+    if (this._peerStore == null) {
+      throw errCode(new Error('peerStore not set'), 'ERR_SERVICE_MISSING')
+    }
+
+    return this._peerStore
+  }
+
+  get upgrader (): Upgrader {
+    if (this._upgrader == null) {
+      throw errCode(new Error('upgrader not set'), 'ERR_SERVICE_MISSING')
+    }
+
+    return this._upgrader
+  }
+
+  get registrar (): Registrar {
+    if (this._registrar == null) {
+      throw errCode(new Error('registrar not set'), 'ERR_SERVICE_MISSING')
+    }
+
+    return this._registrar
+  }
+
+  get connectionManager (): ConnectionManager {
+    if (this._connectionManager == null) {
+      throw errCode(new Error('connectionManager not set'), 'ERR_SERVICE_MISSING')
+    }
+
+    return this._connectionManager
+  }
+
+  get transportManager (): TransportManager {
+    if (this._transportManager == null) {
+      throw errCode(new Error('transportManager not set'), 'ERR_SERVICE_MISSING')
+    }
+
+    return this._transportManager
+  }
+
+  get connectionGater (): ConnectionGater {
+    if (this._connectionGater == null) {
+      throw errCode(new Error('connectionGater not set'), 'ERR_SERVICE_MISSING')
+    }
+
+    return this._connectionGater
+  }
+
+  get contentRouting (): ContentRouting {
+    if (this._contentRouting == null) {
+      throw errCode(new Error('contentRouting not set'), 'ERR_SERVICE_MISSING')
+    }
+
+    return this._contentRouting
+  }
+
+  get peerRouting (): PeerRouting {
+    if (this._peerRouting == null) {
+      throw errCode(new Error('peerRouting not set'), 'ERR_SERVICE_MISSING')
+    }
+
+    return this._peerRouting
+  }
+
+  get datastore (): Datastore {
+    if (this._datastore == null) {
+      throw errCode(new Error('datastore not set'), 'ERR_SERVICE_MISSING')
+    }
+
+    return this._datastore
+  }
+
+  get connectionProtector (): ConnectionProtector | undefined {
+    return this._connectionProtector
+  }
+
+  get dht (): DualDHT {
+    if (this._dht == null) {
+      throw errCode(new Error('dht not set'), 'ERR_SERVICE_MISSING')
+    }
+
+    return this._dht
+  }
+
+  get pubSub (): PubSub {
+    if (this._pubSub == null) {
+      throw errCode(new Error('pubsub not set'), 'ERR_SERVICE_MISSING')
+    }
+
+    return this._pubSub
+  }
+
+  get dialer (): Dialer {
+    if (this._dialer == null) {
+      throw errCode(new Error('dialer not set'), 'ERR_SERVICE_MISSING')
+    }
+
+    return this._dialer
+  }
+
   setPeerId (peerId: PeerId) {
-    this.peerId = peerId
+    this._peerId = peerId
 
     return peerId
   }
 
   getPeerId (): PeerId {
-    if (this.peerId == null) {
-      throw errCode(new Error('peerId not set'), 'ERR_SERVICE_MISSING')
-    }
-
     return this.peerId
   }
 
   setMetrics (metrics: Metrics) {
-    this.metrics = metrics
+    this._metrics = metrics
 
     if (isInitializable(metrics)) {
       metrics.init(this)
@@ -219,7 +335,7 @@ export class Components implements Startable {
   }
 
   setAddressManager (addressManager: AddressManager) {
-    this.addressManager = addressManager
+    this._addressManager = addressManager
 
     if (isInitializable(addressManager)) {
       addressManager.init(this)
@@ -229,15 +345,11 @@ export class Components implements Startable {
   }
 
   getAddressManager (): AddressManager {
-    if (this.addressManager == null) {
-      throw errCode(new Error('addressManager not set'), 'ERR_SERVICE_MISSING')
-    }
-
     return this.addressManager
   }
 
   setPeerStore (peerStore: PeerStore) {
-    this.peerStore = peerStore
+    this._peerStore = peerStore
 
     if (isInitializable(peerStore)) {
       peerStore.init(this)
@@ -247,15 +359,11 @@ export class Components implements Startable {
   }
 
   getPeerStore (): PeerStore {
-    if (this.peerStore == null) {
-      throw errCode(new Error('peerStore not set'), 'ERR_SERVICE_MISSING')
-    }
-
     return this.peerStore
   }
 
   setUpgrader (upgrader: Upgrader) {
-    this.upgrader = upgrader
+    this._upgrader = upgrader
 
     if (isInitializable(upgrader)) {
       upgrader.init(this)
@@ -265,15 +373,11 @@ export class Components implements Startable {
   }
 
   getUpgrader (): Upgrader {
-    if (this.upgrader == null) {
-      throw errCode(new Error('upgrader not set'), 'ERR_SERVICE_MISSING')
-    }
-
     return this.upgrader
   }
 
   setRegistrar (registrar: Registrar) {
-    this.registrar = registrar
+    this._registrar = registrar
 
     if (isInitializable(registrar)) {
       registrar.init(this)
@@ -283,15 +387,11 @@ export class Components implements Startable {
   }
 
   getRegistrar (): Registrar {
-    if (this.registrar == null) {
-      throw errCode(new Error('registrar not set'), 'ERR_SERVICE_MISSING')
-    }
-
     return this.registrar
   }
 
   setConnectionManager (connectionManager: ConnectionManager) {
-    this.connectionManager = connectionManager
+    this._connectionManager = connectionManager
 
     if (isInitializable(connectionManager)) {
       connectionManager.init(this)
@@ -301,15 +401,11 @@ export class Components implements Startable {
   }
 
   getConnectionManager (): ConnectionManager {
-    if (this.connectionManager == null) {
-      throw errCode(new Error('connectionManager not set'), 'ERR_SERVICE_MISSING')
-    }
-
     return this.connectionManager
   }
 
   setTransportManager (transportManager: TransportManager) {
-    this.transportManager = transportManager
+    this._transportManager = transportManager
 
     if (isInitializable(transportManager)) {
       transportManager.init(this)
@@ -319,15 +415,11 @@ export class Components implements Startable {
   }
 
   getTransportManager (): TransportManager {
-    if (this.transportManager == null) {
-      throw errCode(new Error('transportManager not set'), 'ERR_SERVICE_MISSING')
-    }
-
     return this.transportManager
   }
 
   setConnectionGater (connectionGater: ConnectionGater) {
-    this.connectionGater = connectionGater
+    this._connectionGater = connectionGater
 
     if (isInitializable(connectionGater)) {
       connectionGater.init(this)
@@ -337,15 +429,11 @@ export class Components implements Startable {
   }
 
   getConnectionGater (): ConnectionGater {
-    if (this.connectionGater == null) {
-      throw errCode(new Error('connectionGater not set'), 'ERR_SERVICE_MISSING')
-    }
-
     return this.connectionGater
   }
 
   setContentRouting (contentRouting: ContentRouting) {
-    this.contentRouting = contentRouting
+    this._contentRouting = contentRouting
 
     if (isInitializable(contentRouting)) {
       contentRouting.init(this)
@@ -355,15 +443,11 @@ export class Components implements Startable {
   }
 
   getContentRouting (): ContentRouting {
-    if (this.contentRouting == null) {
-      throw errCode(new Error('contentRouting not set'), 'ERR_SERVICE_MISSING')
-    }
-
     return this.contentRouting
   }
 
   setPeerRouting (peerRouting: PeerRouting) {
-    this.peerRouting = peerRouting
+    this._peerRouting = peerRouting
 
     if (isInitializable(peerRouting)) {
       peerRouting.init(this)
@@ -373,15 +457,11 @@ export class Components implements Startable {
   }
 
   getPeerRouting (): PeerRouting {
-    if (this.peerRouting == null) {
-      throw errCode(new Error('peerRouting not set'), 'ERR_SERVICE_MISSING')
-    }
-
     return this.peerRouting
   }
 
   setDatastore (datastore: Datastore) {
-    this.datastore = datastore
+    this._datastore = datastore
 
     if (isInitializable(datastore)) {
       datastore.init(this)
@@ -391,15 +471,11 @@ export class Components implements Startable {
   }
 
   getDatastore (): Datastore {
-    if (this.datastore == null) {
-      throw errCode(new Error('datastore not set'), 'ERR_SERVICE_MISSING')
-    }
-
     return this.datastore
   }
 
   setConnectionProtector (connectionProtector: ConnectionProtector) {
-    this.connectionProtector = connectionProtector
+    this._connectionProtector = connectionProtector
 
     if (isInitializable(connectionProtector)) {
       connectionProtector.init(this)
@@ -413,7 +489,7 @@ export class Components implements Startable {
   }
 
   setDHT (dht: DualDHT) {
-    this.dht = dht
+    this._dht = dht
 
     if (isInitializable(dht)) {
       dht.init(this)
@@ -423,15 +499,11 @@ export class Components implements Startable {
   }
 
   getDHT (): DualDHT {
-    if (this.dht == null) {
-      throw errCode(new Error('dht not set'), 'ERR_SERVICE_MISSING')
-    }
-
     return this.dht
   }
 
   setPubSub (pubsub: PubSub) {
-    this.pubsub = pubsub
+    this._pubSub = pubsub
 
     if (isInitializable(pubsub)) {
       pubsub.init(this)
@@ -441,15 +513,11 @@ export class Components implements Startable {
   }
 
   getPubSub (): PubSub {
-    if (this.pubsub == null) {
-      throw errCode(new Error('pubsub not set'), 'ERR_SERVICE_MISSING')
-    }
-
-    return this.pubsub
+    return this.pubSub
   }
 
   setDialer (dialer: Dialer) {
-    this.dialer = dialer
+    this._dialer = dialer
 
     if (isInitializable(dialer)) {
       dialer.init(this)
@@ -459,10 +527,6 @@ export class Components implements Startable {
   }
 
   getDialer (): Dialer {
-    if (this.dialer == null) {
-      throw errCode(new Error('dialer not set'), 'ERR_SERVICE_MISSING')
-    }
-
     return this.dialer
   }
 }
