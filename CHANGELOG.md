@@ -1,3 +1,10 @@
+## [3.1.1](https://github.com/libp2p/js-libp2p-components/compare/v3.1.0...v3.1.1) (2022-10-11)
+
+
+### Dependencies
+
+* upgrade @libp2p/interface-pubsub to 3.0.0 ([#22](https://github.com/libp2p/js-libp2p-components/issues/22)) ([6ba77ee](https://github.com/libp2p/js-libp2p-components/commit/6ba77ee83d794d24a1cf0356a76a6a20927ff535))
+
 ## [3.1.0](https://github.com/libp2p/js-libp2p-components/compare/v3.0.1...v3.1.0) (2022-10-11)
 
 
