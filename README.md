@@ -23,15 +23,18 @@ $ npm i @libp2p/components
 
 ## Usage
 
-```js
-import { Components } from '@libp2p/components'
+```typescript
+import { AvailableLibp2pComponents } from '@libp2p/components'
 
-const components = new Components({
-  // .. components here
-})
+type Libp2pLibraryRequiredComponents = Pick<AvailableLibp2pComponents, "peerId" | "addressManager">
+
+
 
 // later
-components.getPeerId()
+export function libp2pLib (init: Libp2pLibInit = {}): (components: Libp2pLibraryRequiredComponents) => Libp2pLib {
+  return (components) => new Libp2pLibInit(init, components)
+}
+
 ```
 
 ## License
