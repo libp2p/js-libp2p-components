@@ -161,5 +161,46 @@
     "@libp2p/interface-registrar": "^2.0.4",
     "@libp2p/interface-transport": "^2.0.1",
     "interface-datastore": "^7.0.1"
+  },
+  "peerDependenciesMeta": {
+    "@libp2p/interface-address-manager": {
+      "optional": true
+    },
+    "@libp2p/interface-connection": {
+      "optional": true
+    },
+    "@libp2p/interface-connection-manager": {
+      "optional": true
+    },
+    "@libp2p/interface-content-routing": {
+      "optional": true
+    },
+    "@libp2p/interface-dht": {
+      "optional": true
+    },
+    "@libp2p/interface-metrics": {
+      "optional": true
+    },
+    "@libp2p/interface-peer-id": {
+      "optional": true
+    },
+    "@libp2p/interface-peer-routing": {
+      "optional": true
+    },
+    "@libp2p/interface-peer-store": {
+      "optional": true
+    },
+    "@libp2p/interface-pubsub": {
+      "optional": true
+    },
+    "@libp2p/interface-registrar": {
+      "optional": true
+    },
+    "@libp2p/interface-transport": {
+      "optional": true
+    },
+    "interface-datastore": {
+      "optional": true
+    }
   }
 }
